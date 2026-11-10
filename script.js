@@ -25,16 +25,19 @@ document.querySelectorAll(".brand .brand-mark").forEach(mark => {
   const logo = document.createElement("img");
   logo.src = "logo.png";
   logo.alt = "AURA INK LAB logo";
-  logo.className = "brand-mark";
+  logo.className = "brand-logo";
   Object.assign(logo.style, {
     display: "block",
-    width: "46px",
-    height: "46px",
+    width: "52px",
+    height: "52px",
+    maxWidth: "100%",
+    maxHeight: "100%",
     objectFit: "contain",
+    objectPosition: "center",
     background: "transparent",
     border: "0",
     borderRadius: "0",
-    fontSize: "0",
+    padding: "0",
     flexShrink: "0"
   });
   mark.replaceWith(logo);
