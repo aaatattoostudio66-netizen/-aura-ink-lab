@@ -20,7 +20,7 @@ nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
 }));
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Replace the text placeholder in the header and footer with the uploaded logo.
+// Refined brand mark display: preserve the entire logo without cropping.
 document.querySelectorAll(".brand .brand-mark").forEach(mark => {
   const logo = document.createElement("img");
   logo.src = "logo.png";
@@ -42,6 +42,61 @@ document.querySelectorAll(".brand .brand-mark").forEach(mark => {
   });
   mark.replaceWith(logo);
 });
+
+// Golden-ratio-inspired hero composition (approximately 61.8% / 38.2%).
+const brandLayout = document.createElement("style");
+brandLayout.textContent = `
+  .hero { position: relative; isolation: isolate; }
+  .hero-watermark {
+    left: 61.8%;
+    top: 52%;
+    width: min(61.8vw, 780px);
+    height: min(76vh, 700px);
+    object-fit: contain;
+    opacity: .12;
+  }
+  .hero-content {
+    position: absolute;
+    left: 9%;
+    top: 50%;
+    width: min(61.8%, 620px);
+    max-width: 620px;
+    margin: 0;
+    padding-top: 0;
+    transform: translateY(-50%);
+  }
+  .hero-content h1 {
+    max-width: 10ch;
+    line-height: .96;
+    letter-spacing: .015em;
+    margin: 22px 0;
+  }
+  .hero-sub { max-width: 34ch; line-height: 1.7; }
+  .hero-index { right: 6.2%; bottom: 6.2%; }
+  .brand { gap: 16px; }
+  .brand-logo { object-fit: contain; object-position: center; }
+  @media (max-width: 680px) {
+    .hero-watermark {
+      left: 61.8%;
+      top: 48%;
+      width: 88vw;
+      height: 58vh;
+      opacity: .10;
+    }
+    .hero-content {
+      left: 8%;
+      top: 52%;
+      width: 84%;
+      max-width: none;
+      transform: translateY(-50%);
+    }
+    .hero-content h1 { font-size: clamp(46px, 13vw, 64px); }
+    .hero-index { right: 6%; bottom: 4%; }
+    .brand { gap: 10px; }
+    .brand-logo { width: 42px !important; height: 42px !important; }
+  }
+`;
+document.head.appendChild(brandLayout);
 
 // Add the studio's WhatsApp number here in international format, without + or spaces.
 // Example format only: 60123456789
