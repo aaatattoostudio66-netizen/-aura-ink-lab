@@ -29,6 +29,60 @@ if (menuButton && nav) {
   });
 }
 
+const filterButtons = document.querySelectorAll(".filter-btn");
+const portfolioCards = document.querySelectorAll(".portfolio-card");
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightbox-image");
+const lightboxTitle = document.getElementById("lightbox-title");
+const lightboxDescription = document.getElementById("lightbox-description");
+const lightboxClose = document.querySelector(".lightbox-close");
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedFilter = button.dataset.filter;
+
+    filterButtons.forEach((btn) => btn.classList.toggle("active", btn === button));
+
+    portfolioCards.forEach((card) => {
+      const category = card.dataset.category;
+      const show = selectedFilter === "all" || category === selectedFilter;
+      card.classList.toggle("hidden", !show);
+    });
+  });
+});
+
+portfolioCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    const imageSrc = card.querySelector("img").src;
+    const title = card.dataset.title || "Artwork";
+    const description = card.dataset.description || "Tattoo artwork preview.";
+
+    lightboxImage.src = imageSrc;
+    lightboxTitle.textContent = title;
+    lightboxDescription.textContent = description;
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+  });
+});
+
+const closeLightbox = () => {
+  lightbox.classList.remove("is-open");
+  lightbox.setAttribute("aria-hidden", "true");
+};
+
+lightboxClose.addEventListener("click", closeLightbox);
+lightbox.addEventListener("click", (event) => {
+  if (event.target.dataset.close === "true" || event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+    closeLightbox();
+  }
+});
+
 const yearNode = document.getElementById("year");
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();

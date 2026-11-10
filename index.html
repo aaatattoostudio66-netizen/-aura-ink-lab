@@ -57,15 +57,62 @@
         </div>
         <p class="section-note" data-en="A collection of ideas made permanent." data-zh="让灵感成为肌肤上的艺术。">A collection of ideas made permanent.</p>
       </div>
-      <div class="work-grid">
-        <article class="work-card work-tall"><img src="dragon-back.jpg" alt="Japanese dragon back tattoo concept"><span>01 — JAPANESE / IREZUMI</span></article>
-        <article class="work-card"><img src="koi-sleeve.jpg" alt="Koi fish and wave tattoo concept"><span>02 — JAPANESE / KOI</span></article>
-        <article class="work-card"><img src="peony-shoulder.jpg" alt="Black and grey peony tattoo concept"><span>03 — BLACK & GREY</span></article>
-        <article class="work-card"><img src="botanical-fine-line.jpg" alt="Botanical fine line tattoo concept"><span>04 — FINE LINE</span></article>
-        <article class="work-card"><img src="classical-portrait.jpg" alt="Classical sculpture portrait tattoo concept"><span>05 — REALISM</span></article>
+
+      <div class="portfolio-filters" aria-label="Portfolio filters">
+        <button class="filter-btn active" data-filter="all" type="button">All</button>
+        <button class="filter-btn" data-filter="japanese" type="button">Japanese</button>
+        <button class="filter-btn" data-filter="black-grey" type="button">Black & Grey</button>
+        <button class="filter-btn" data-filter="fine-line" type="button">Fine Line</button>
+        <button class="filter-btn" data-filter="realism" type="button">Realism</button>
+        <button class="filter-btn" data-filter="american-traditional" type="button">American Traditional</button>
       </div>
+
+      <div class="portfolio-grid">
+        <article class="portfolio-card" data-category="japanese" data-title="Japanese Dragon" data-description="Traditional Japanese dragon concept with strong motion and balance.">
+          <img src="dragon-back.jpg" alt="Japanese dragon concept artwork">
+          <span>Japanese / Dragon</span>
+        </article>
+
+        <article class="portfolio-card" data-category="japanese" data-title="Koi by the Wave" data-description="Koi and wave composition designed for movement and symbolic meaning.">
+          <img src="koi-sleeve.jpg" alt="Koi fish tattoo concept">
+          <span>Japanese / Koi</span>
+        </article>
+
+        <article class="portfolio-card" data-category="black-grey" data-title="Peony Bloom" data-description="Black and grey floral composition with soft contrast and clean structure.">
+          <img src="peony-shoulder.jpg" alt="Black and grey peony tattoo concept">
+          <span>Black & Grey / Peony</span>
+        </article>
+
+        <article class="portfolio-card" data-category="fine-line" data-title="Botanical Linework" data-description="Fine line flora that keeps detail delicate and refined.">
+          <img src="botanical-fine-line.jpg" alt="Botanical fine line tattoo concept">
+          <span>Fine Line / Flora</span>
+        </article>
+
+        <article class="portfolio-card" data-category="realism" data-title="Classical Portrait" data-description="Realism concept with sculptural detail and a timeless finish.">
+          <img src="classical-portrait.jpg" alt="Classical portrait tattoo concept">
+          <span>Realism / Portrait</span>
+        </article>
+
+        <article class="portfolio-card" data-category="american-traditional" data-title="American Traditional Eagle" data-description="Bold, classic American traditional styling with strong contrast and clean silhouette.">
+          <img src="studio-interior.jpg" alt="American traditional tattoo concept">
+          <span>American Traditional / Eagle</span>
+        </article>
+      </div>
+
       <p class="demo-note" data-en="Visual concept images — replace with the studio's actual healed and fresh tattoo photographs before launch." data-zh="以上为视觉概念图；正式上线前请替换为工作室真实的纹身作品照片。">Visual concept images — replace with the studio's actual healed and fresh tattoo photographs before launch.</p>
     </section>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-close="true"></div>
+      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+        <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+        <img id="lightbox-image" src="" alt="Large portfolio image">
+        <div class="lightbox-caption">
+          <h3 id="lightbox-title">Artwork</h3>
+          <p id="lightbox-description"></p>
+        </div>
+      </div>
+    </div>
 
     <section class="about-section" id="about">
       <div class="about-photo"><img src="studio-interior.jpg" alt="Tattoo studio interior concept"></div>
