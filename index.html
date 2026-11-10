@@ -126,5 +126,18 @@
     <p>MORE THAN INK. IT'S <em>ART.</em></p><small>© <span id="year"></span> AURA INK LAB. ALL RIGHTS RESERVED.</small>
   </footer>
   <script src="script.js"></script>
+  <script>
+    window.addEventListener('beforeunload', function () {
+      window.scrollTo(0, 0);
+    });
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        if (window.location.hash) {
+          return;
+        }
+        window.scrollTo(0, 0);
+      }, 0);
+    });
+  </script>
 </body>
 </html>
