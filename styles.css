@@ -264,6 +264,7 @@ button, input, textarea, select { font: inherit; }
   letter-spacing: 1.8px;
   text-transform: uppercase;
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  cursor: pointer;
 }
 
 .button-light {
@@ -650,6 +651,31 @@ button, input, textarea, select { font: inherit; }
   margin-bottom: 24px;
 }
 
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.wechat-button {
+  min-width: 220px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.wechat-copy-status {
+  display: block;
+  min-height: 1.5em;
+  margin-top: 10px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.72);
+}
+
 .contact-section small {
   display: block;
   margin-top: 18px;
@@ -852,6 +878,15 @@ button, input, textarea, select { font: inherit; }
   .about-photo img,
   .studio-section img {
     height: 360px;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .wechat-button,
+  #whatsapp-link {
+    width: min(100%, 340px);
   }
 
   .social-links {
