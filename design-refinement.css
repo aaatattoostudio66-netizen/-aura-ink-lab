@@ -8,6 +8,15 @@
 ::selection { color: #090909; background: var(--gold); }
 :focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 4px; }
 html { scroll-padding-top: 100px; }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a, button {
+  transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease, opacity .2s ease;
+}
 
 .site-header {
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
@@ -64,7 +73,6 @@ html { scroll-padding-top: 100px; }
   border-radius: 999px;
   padding: 10px 16px;
   letter-spacing: .12em;
-  transition: color .22s ease, border-color .22s ease, background .22s ease, transform .22s ease;
 }
 .filter-btn:hover { transform: translateY(-2px); }
 .filter-btn.active { background: var(--gold-soft); }
@@ -75,6 +83,7 @@ html { scroll-padding-top: 100px; }
   border: 1px solid rgba(255,255,255,.08);
   background: linear-gradient(145deg, #191919, #0d0d0d);
   isolation: isolate;
+  transform: translateY(0);
 }
 .portfolio-card img {
   position: absolute;
@@ -96,6 +105,9 @@ html { scroll-padding-top: 100px; }
   padding: 24px 20px 19px;
   font-size: 11px;
   letter-spacing: .17em;
+}
+.portfolio-card:hover {
+  transform: translateY(-2px);
 }
 .portfolio-card:hover img { transform: scale(1.045); }
 .portfolio-card:focus-within { outline: 2px solid var(--gold); outline-offset: 3px; }
@@ -130,6 +142,7 @@ html { scroll-padding-top: 100px; }
   margin-bottom: 30px;
   padding: clamp(48px, 7vw, 84px) clamp(20px, 4vw, 56px);
   border: 1px solid rgba(215,179,106,.2);
+  border-radius: 22px;
   background: radial-gradient(ellipse at 50% 0%, rgba(215,179,106,.09), transparent 64%), #101010;
 }
 .contact-section h2 { max-width: 100%; }
@@ -138,7 +151,6 @@ html { scroll-padding-top: 100px; }
 .contact-actions .button {
   min-width: 210px;
   border-radius: 2px;
-  transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
 }
 .contact-actions .button:hover { transform: translateY(-2px); }
 .wechat-copy-status { max-width: 48ch; line-height: 1.6; }
@@ -153,7 +165,6 @@ html { scroll-padding-top: 100px; }
   padding: 9px 14px;
   border: 1px solid rgba(255,255,255,.13);
   border-radius: 2px;
-  transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease;
 }
 .social-links a:hover { border-color: rgba(215,179,106,.55); background: rgba(215,179,106,.05); transform: translateY(-2px); }
 .social-links a[aria-disabled="true"] { opacity: .58; cursor: default; }
@@ -230,7 +241,7 @@ html { scroll-padding-top: 100px; }
   .price-panel { padding: 24px 20px; }
   .steps { grid-template-columns: 1fr 1fr; gap: 24px 16px; }
   .steps h3 { font-size: 1.55rem; }
-  .contact-section { width: calc(100% - 2 * var(--page-gutter)); padding: 42px 18px; }
+  .contact-section { width: calc(100% - 2 * var(--page-gutter)); padding: 42px 18px; border-radius: 18px; }
   .contact-section h2 { font-size: clamp(2rem, 9vw, 3rem); }
   .contact-actions { width: 100%; flex-direction: column; }
   .contact-actions .button { width: min(100%, 360px); min-width: 0; min-height: 48px; }
