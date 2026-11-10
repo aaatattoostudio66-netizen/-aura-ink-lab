@@ -10,32 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .hero-image { z-index: 0; }
-    .hero-shade { z-index: 1; }
-    .hero-watermark {
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      left: 50%;
-      width: min(70vw, 780px);
-      height: min(76vh, 700px);
-      object-fit: contain;
-      object-position: center;
-      transform: translate(-50%, -50%);
-      opacity: 0.15;
-      filter: sepia(1) saturate(1.65) hue-rotate(2deg) brightness(1.12);
-      pointer-events: none;
-    }
-    .hero-content, .hero-index { z-index: 3; }
-    @media (max-width: 680px) {
-      .hero-watermark {
-        width: 88vw;
-        height: 62vh;
-        opacity: 0.12;
-      }
-    }
-  </style>
 </head>
 <body>
   <header class="site-header">
@@ -43,8 +17,13 @@
       <img class="brand-logo" src="logo.png" alt="AURA INK LAB logo">
       <span class="brand-copy"><strong>AURA INK LAB</strong><small>TATTOO · ART · DESIGN</small></span>
     </a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    <nav class="main-nav">
+
+    <div class="header-actions">
+      <button class="language-switch" type="button" aria-label="Switch language">中文</button>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </div>
+
+    <nav class="main-nav" aria-label="Main navigation">
       <a href="#home" data-en="Home" data-zh="首页">Home</a>
       <a href="#works" data-en="Portfolio" data-zh="作品集">Portfolio</a>
       <a href="#services" data-en="Services" data-zh="服务">Services</a>
@@ -52,7 +31,6 @@
       <a href="#process" data-en="Process" data-zh="预约流程">Process</a>
       <a href="#contact" data-en="Contact" data-zh="联系">Contact</a>
     </nav>
-    <button class="language-switch" type="button" aria-label="Switch language">中文</button>
   </header>
 
   <main>
@@ -60,18 +38,23 @@
       <div class="hero-image" role="img" aria-label="Japanese-inspired dragon tattoo artwork"></div>
       <div class="hero-shade"></div>
       <img class="hero-watermark" src="logo.png" alt="" aria-hidden="true">
+
       <div class="hero-content">
         <p class="eyebrow" data-en="TATTOO · ART · DESIGN" data-zh="刺青 · 艺术 · 设计">TATTOO · ART · DESIGN</p>
         <h1>MORE THAN INK.<br>IT'S <em>ART.</em></h1>
         <p class="hero-sub" data-en="Personal expression, crafted to last." data-zh="以专业技艺，将个人表达化为恒久艺术。">Personal expression, crafted to last.</p>
         <a class="button button-light" href="#contact" data-en="BOOK AN APPOINTMENT ↗" data-zh="预约咨询 ↗">BOOK AN APPOINTMENT ↗</a>
       </div>
+
       <span class="hero-index">01 / AURA INK LAB</span>
     </section>
 
     <section class="section works-section" id="works">
       <div class="section-heading">
-        <div><p class="eyebrow red-line" data-en="THE ARTWORK" data-zh="艺术作品">THE ARTWORK</p><h2 data-en="SELECTED WORKS" data-zh="精选作品">SELECTED WORKS</h2></div>
+        <div>
+          <p class="eyebrow red-line" data-en="THE ARTWORK" data-zh="艺术作品">THE ARTWORK</p>
+          <h2 data-en="SELECTED WORKS" data-zh="精选作品">SELECTED WORKS</h2>
+        </div>
         <p class="section-note" data-en="A collection of ideas made permanent." data-zh="让灵感成为肌肤上的艺术。">A collection of ideas made permanent.</p>
       </div>
       <div class="work-grid">
@@ -96,9 +79,13 @@
 
     <section class="section services-section" id="services">
       <div class="section-heading">
-        <div><p class="eyebrow red-line" data-en="WHAT WE CREATE" data-zh="创作服务">WHAT WE CREATE</p><h2 data-en="TATTOO SERVICES" data-zh="纹身服务">TATTOO SERVICES</h2></div>
+        <div>
+          <p class="eyebrow red-line" data-en="WHAT WE CREATE" data-zh="创作服务">WHAT WE CREATE</p>
+          <h2 data-en="TATTOO SERVICES" data-zh="纹身服务">TATTOO SERVICES</h2>
+        </div>
         <p class="section-note" data-en="Thoughtful design. Clear pricing. No surprises." data-zh="认真设计、价格清晰、沟通透明。">Thoughtful design. Clear pricing. No surprises.</p>
       </div>
+
       <div class="service-layout">
         <div class="service-list">
           <div><span>01</span><strong data-en="Custom Tattoo" data-zh="原创定制纹身">Custom Tattoo</strong><small data-en="Designed around your idea" data-zh="根据你的想法专属设计">Designed around your idea</small></div>
@@ -106,6 +93,7 @@
           <div><span>03</span><strong data-en="Japanese & Traditional" data-zh="日式与传统风格">Japanese & Traditional</strong><small data-en="Bold forms and timeless motifs" data-zh="鲜明造型与经典元素">Bold forms and timeless motifs</small></div>
           <div><span>04</span><strong data-en="Flash Tattoo" data-zh="现成图案纹身">Flash Tattoo</strong><small data-en="Curated designs for quicker sessions" data-zh="精选图案，适合快速完成">Curated designs for quicker sessions</small></div>
         </div>
+
         <aside class="price-panel">
           <p class="eyebrow" data-en="PRICE GUIDE · MYR" data-zh="价格参考 · 马币">PRICE GUIDE · MYR</p>
           <div class="price"><strong>RM 80–150</strong><span data-en="ENTRY DESIGNS" data-zh="入门款式">ENTRY DESIGNS</span></div>
@@ -146,10 +134,24 @@
   </main>
 
   <footer class="site-footer">
-    <a class="brand footer-brand" href="#home"><img class="brand-logo" src="logo.png" alt="AURA INK LAB logo"><span class="brand-copy"><strong>AURA INK LAB</strong><small>TATTOO · ART · DESIGN</small></span></a>
+    <div class="footer-brand-wrap">
+      <a class="brand footer-brand" href="#home">
+        <img class="brand-logo" src="logo.png" alt="AURA INK LAB logo">
+        <span class="brand-copy"><strong>AURA INK LAB</strong><small>TATTOO · ART · DESIGN</small></span>
+      </a>
+    </div>
+
+    <div class="social-links" aria-label="Social links">
+      <a href="https://www.facebook.com/share/1KxEXmrjY4/?mibextid=wwXIfr" target="_blank" rel="noreferrer noopener">Facebook</a>
+      <a href="https://www.instagram.com/aura_ink_lab?dlrf=Nnltc2I1aDh2bTJ5&utm_source=qr" target="_blank" rel="noreferrer noopener">Instagram</a>
+      <a href="http://xhslink.com/m/2UGL5UgToT0" target="_blank" rel="noreferrer noopener">小红书</a>
+      <a href="#" aria-label="TikTok placeholder">TikTok</a>
+    </div>
+
     <p>MORE THAN INK. IT'S <em>ART.</em></p>
     <small>© <span id="year"></span> AURA INK LAB. ALL RIGHTS RESERVED.</small>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
