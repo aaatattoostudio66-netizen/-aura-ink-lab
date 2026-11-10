@@ -10,6 +10,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .hero-image { z-index: 0; }
+    .hero-shade { z-index: 1; }
+    .hero-watermark {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      width: min(70vw, 780px);
+      height: min(76vh, 700px);
+      object-fit: contain;
+      object-position: center;
+      transform: translate(-50%, -50%);
+      opacity: 0.15;
+      filter: sepia(1) saturate(1.65) hue-rotate(2deg) brightness(1.12);
+      pointer-events: none;
+    }
+    .hero-content, .hero-index { z-index: 3; }
+    @media (max-width: 680px) {
+      .hero-watermark {
+        width: 88vw;
+        height: 62vh;
+        opacity: 0.12;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -33,6 +59,7 @@
     <section class="hero" id="home">
       <div class="hero-image" role="img" aria-label="Japanese-inspired dragon tattoo artwork"></div>
       <div class="hero-shade"></div>
+      <img class="hero-watermark" src="logo.png" alt="" aria-hidden="true">
       <div class="hero-content">
         <p class="eyebrow" data-en="TATTOO · ART · DESIGN" data-zh="刺青 · 艺术 · 设计">TATTOO · ART · DESIGN</p>
         <h1>MORE THAN INK.<br>IT'S <em>ART.</em></h1>
