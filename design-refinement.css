@@ -261,3 +261,82 @@ a, button {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* Brand watermark overlays: visual only; original image files stay unchanged. */
+.portfolio-card::before,
+.about-photo::after,
+.lightbox-panel::after,
+.hero::after,
+.studio-section::after {
+  content: "";
+  background: url("logo.png") center / contain no-repeat;
+  opacity: .38;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 5px rgba(0,0,0,.65));
+}
+
+.portfolio-card::before {
+  position: absolute;
+  z-index: 2;
+  right: 12px;
+  bottom: 12px;
+  width: 46px;
+  height: 46px;
+}
+
+.about-photo { position: relative; }
+.about-photo::after {
+  position: absolute;
+  z-index: 2;
+  right: 14px;
+  bottom: 14px;
+  width: 58px;
+  height: 58px;
+}
+
+.lightbox-panel::after {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  right: 16px;
+  width: 64px;
+  height: 64px;
+}
+.lightbox-close { z-index: 3; }
+
+.hero::after {
+  position: absolute;
+  z-index: 1;
+  right: var(--page-gutter);
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  opacity: .48;
+}
+
+.studio-section { position: relative; }
+.studio-section::after {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 0;
+  width: 51%;
+  height: 500px;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 680px) {
+  .portfolio-card::before { right: 8px; bottom: 8px; width: 36px; height: 36px; }
+  .about-photo::after { right: 10px; bottom: 10px; width: 46px; height: 46px; }
+  .lightbox-panel::after { top: 10px; right: 10px; width: 48px; height: 48px; }
+  .hero::after { right: var(--page-gutter); bottom: 22px; width: 38px; height: 38px; }
+  .studio-section::after {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    transform: none;
+  }
+}
